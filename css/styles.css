@@ -1,0 +1,23 @@
+h1,h2,h3 {
+    text-align:center;
+    font-family: 'Baloo Tammudu', cursive;
+}
+
+#winner{
+    color:green;
+}
+
+.playerName {
+    display:inline-block;
+    margin-left:50px;
+    margin-right:50px;
+    text-align:center;
+}
+
+.playerNameText {
+    text-align:center;
+}
+
+#cardLayout {
+    width:400px;
+    margin:0 auto;
