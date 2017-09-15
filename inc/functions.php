@@ -1,5 +1,6 @@
 <?php
     $playerNames = array();
+    $winners = array();
     $deck = array();
     $totals = array();
     $hands = array();
@@ -113,6 +114,27 @@
     }
     
     function displayWinner(){
+        global $playerNames, $totals, $winners;
+        $max = 0;
+        $winnings = 0;
         
+        for($i=0; $i<4;$i++) {
+            if($max <= $totals[$i] && $totals[$i] <=42) {
+                $max = $totals[$i];
+            }
+        }
+
+        for($i=0;$i<4;$i++) {
+            if($totals[$i]==$max) {
+                $winners[] = $i;
+            }
+            else {
+                $winnings += $totals[$i];
+            }
+        }
+        
+        for($i=0;$i<sizeof($winners);$i++) {
+            echo "<p id=winners> ".$playerNames[$winners[$i]]." wins $winnings points!!</p>";
+        }
     }
 ?>
