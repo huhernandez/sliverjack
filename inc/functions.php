@@ -25,10 +25,11 @@
     function populatePlayerNames(){
         global $playerNames;
         
-        $playerNames[] = "Test1";
-        $playerNames[] = "Test2";
-        $playerNames[] = "Test3";
-        $playerNames[] = "Test4";
+        $playerNames[] = "Phil";
+        $playerNames[] = "Oz";
+        $playerNames[] = "Dre";
+        $playerNames[] = "Seuss";
+        shuffle($playerNames);
     }
     
     //For each suit (0-3), for each card value (1-13),
@@ -73,8 +74,8 @@
         
         echo "<div class='player'>";
             echo "<div class='playerImage'>";
-            echo "<img src='img/photos/ace.png'/>";
-            echo $playerNames[$user];
+            echo "<img src='img/photos/".$playerNames[$user].".jpg'/>";
+            echo "Dr. ".$playerNames[$user]."";
             echo "</div>";
             
             echo "<div class='playerHand'>";
@@ -134,7 +135,7 @@
         }
         
         for($i=0;$i<sizeof($winners);$i++) {
-            echo "<p id=winners> ".$playerNames[$winners[$i]]." wins $winnings points!!</p>";
+            echo "<p id=winners> Dr. ".$playerNames[$winners[$i]]." wins $winnings points!!</p>";
         }
     }
 ?>
