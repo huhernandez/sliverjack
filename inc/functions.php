@@ -174,24 +174,4 @@
             echo "<p id=winners> Dr. ".$playerNames[$winners[$i]]." wins $winnings points!</p>";
         }
     }
-    
-    function elapsedTime(){
-    global $start;
-     echo "<hr>";
-     $elapsedSecs = microtime(true) - $start;
-     echo "This match elapsed time: " . $elapsedSecs . " secs <br /><br/>";
-
-     echo "Matches played:"  . $_SESSION['matchCount'] . "<br />";
-
-     $_SESSION['totalElapsedTime'] += $elapsedSecs;
-     
-     echo "Total elapsed time in all matches: " .  $_SESSION['totalElapsedTime'] . "<br /><br />";
-     
-     echo "Average time: " . ( $_SESSION['totalElapsedTime']  / $_SESSION['matchCount']);
-     
-     $_SESSION['matchCount']++;
-} //elapsedTime
-
-    
-    
 ?>
