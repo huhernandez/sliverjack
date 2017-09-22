@@ -38,7 +38,6 @@
         elapsedTime();
     }
     
-<<<<<<< HEAD
     function elapsedTime(){
         global $start;
          echo "<hr>";
@@ -55,8 +54,6 @@
          
          $_SESSION['matchCount']++;
     } //elapsedTime
-=======
->>>>>>> f7268f4658346f0520caa2d19aca86896eddf851
     
     //Push four new player names on to the playerNames array
     function populatePlayerNames(){
