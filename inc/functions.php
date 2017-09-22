@@ -4,6 +4,13 @@
     $deck = array();
     $totals = array();
     $hands = array();
+    $start = microtime(true);
+    session_start(); //start or resume a session
+
+    if (!isset($_SESSION['matchCount'])) { //checks whether the session exists
+        $_SESSION['matchCount'] = 1;
+        $_SESSION['totalElapsedTime'] = 0;
+    }
     
     $start = microtime(true);
 
@@ -28,8 +35,10 @@
         }
         
         displayWinner();
+        elapsedTime();
     }
     
+<<<<<<< HEAD
     function elapsedTime(){
         global $start;
          echo "<hr>";
@@ -46,6 +55,8 @@
          
          $_SESSION['matchCount']++;
     } //elapsedTime
+=======
+>>>>>>> f7268f4658346f0520caa2d19aca86896eddf851
     
     //Push four new player names on to the playerNames array
     function populatePlayerNames(){
@@ -166,4 +177,24 @@
             echo "<p id=winners> Dr. ".$playerNames[$winners[$i]]." wins $winnings points!</p>";
         }
     }
+    
+    function elapsedTime(){
+    global $start;
+     echo "<hr>";
+     $elapsedSecs = microtime(true) - $start;
+     echo "This match elapsed time: " . $elapsedSecs . " secs <br /><br/>";
+
+     echo "Matches played:"  . $_SESSION['matchCount'] . "<br />";
+
+     $_SESSION['totalElapsedTime'] += $elapsedSecs;
+     
+     echo "Total elapsed time in all matches: " .  $_SESSION['totalElapsedTime'] . "<br /><br />";
+     
+     echo "Average time: " . ( $_SESSION['totalElapsedTime']  / $_SESSION['matchCount']);
+     
+     $_SESSION['matchCount']++;
+} //elapsedTime
+
+    
+    
 ?>
