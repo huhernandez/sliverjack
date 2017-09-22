@@ -1,7 +1,5 @@
 <?php
 include 'inc/functions.php';
-
-$start = microtime(true);
 ?>
 
 <html>
@@ -18,6 +16,8 @@ $start = microtime(true);
         <div id="main">
             <?php
                 play();
+                
+                elapsedTime();
             ?>
             <FORM>
                 <INPUT TYPE="submit" VALUE="Play Again">
@@ -25,9 +25,3 @@ $start = microtime(true);
         </div>
     </body>
 </html>
-
-<?php
-
-$elapsedSecs = microtime(true) - $start;
-echo $elapsedSecs . " secs";
-?>

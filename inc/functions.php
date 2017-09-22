@@ -5,6 +5,15 @@
     $totals = array();
     $hands = array();
     
+    $start = microtime(true);
+
+    session_start(); //start or resume a session
+    
+    if (!isset($_SESSION['matchCount'])) { //checks whether the session exists
+        $_SESSION['matchCount'] = 1;
+        $_SESSION['totalElapsedTime'] = 0;
+    }
+    
     //Populates the playerName array, populates the deck array with 13 cards
     //for each player (0-3), get the hand for that player, push it in to the
     //hands array, display the hand of cards and then display the winner
@@ -20,6 +29,23 @@
         
         displayWinner();
     }
+    
+    function elapsedTime(){
+        global $start;
+         echo "<hr>";
+         $elapsedSecs = microtime(true) - $start;
+         echo "This match elapsed time: " . $elapsedSecs . " secs <br /><br/>";
+    
+         echo "Matches played:"  . $_SESSION['matchCount'] . "<br />";
+    
+         $_SESSION['totalElapsedTime'] += $elapsedSecs;
+         
+         echo "Total elapsed time in all matches: " .  $_SESSION['totalElapsedTime'] . "<br /><br />";
+         
+         echo "Average time: " . ( $_SESSION['totalElapsedTime']  / $_SESSION['matchCount']);
+         
+         $_SESSION['matchCount']++;
+    } //elapsedTime
     
     //Push four new player names on to the playerNames array
     function populatePlayerNames(){
@@ -76,6 +102,7 @@
             echo "<div class='playerImage'>";
             echo "<img src='img/photos/".$playerNames[$user].".jpg'/>";
             echo "Dr. ".$playerNames[$user]."";
+            echo $_SESSION[$playerNames[$user]]." points";
             echo "</div>";
             
             echo "<div class='playerHand'>";
@@ -135,7 +162,8 @@
         }
         
         for($i=0;$i<sizeof($winners);$i++) {
-            echo "<p id=winners> Dr. ".$playerNames[$winners[$i]]." wins $winnings points!!</p>";
+            $_SESSION[$playerNames[$winners[$i]]] += $winnings;
+            echo "<p id=winners> Dr. ".$playerNames[$winners[$i]]." wins $winnings points!</p>";
         }
     }
 ?>
