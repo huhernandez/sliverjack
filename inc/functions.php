@@ -35,7 +35,6 @@
         }
         
         displayWinner();
-        elapsedTime();
     }
     
     function elapsedTime(){
