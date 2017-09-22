@@ -1,7 +1,6 @@
 <?php
 include 'inc/functions.php';
 
-$start = microtime(true);
 ?>
 
 <html>
@@ -25,9 +24,3 @@ $start = microtime(true);
         </div>
     </body>
 </html>
-
-<?php
-
-$elapsedSecs = microtime(true) - $start;
-echo $elapsedSecs . " secs";
-?>
