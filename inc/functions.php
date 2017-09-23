@@ -108,18 +108,21 @@
         echo "<div class='player'>";
             echo "<div class='playerImage'>";
             echo "<img src='img/photos/".$playerNames[$user].".jpg'/>";
-            echo "Dr. ".$playerNames[$user]."";
-            echo $_SESSION[$playerNames[$user]]." points";
-            echo "</div>";
-            
-            echo "<div class='playerHand'>";
             foreach($hands[$user] as $card){
                 displayCard($user,$card);
             }
             echo "</div>";
+            echo "Dr. ".$playerNames[$user]."";
             echo "<div class='playerScore'>";
-            echo $totals[$user];
+            echo "points this hand ".$totals[$user];
+
+            
+            echo "<br>";
+            echo "total points ".$_SESSION[$playerNames[$user]];
+            echo "<div class='playerHand'>";
+
             echo "</div>";
+            
         echo "</div>";
     }
     
