@@ -41,15 +41,15 @@
         global $start;
          echo "<hr>";
          $elapsedSecs = microtime(true) - $start;
-         echo "This match elapsed time: " . $elapsedSecs . " secs <br /><br/>";
+         echo "<h4>This match elapsed time: " . $elapsedSecs . " secs <br/></h4>";
     
-         echo "Matches played:"  . $_SESSION['matchCount'] . "<br />";
+         echo "<h4>Matches played:"  . $_SESSION['matchCount'] . "<br /></h4>";
     
          $_SESSION['totalElapsedTime'] += $elapsedSecs;
          
-         echo "Total elapsed time in all matches: " .  $_SESSION['totalElapsedTime'] . "<br /><br />";
+         echo "<h4>Total elapsed time in all matches: " .  $_SESSION['totalElapsedTime'] . "<br /></h4>";
          
-         echo "Average time: " . ( $_SESSION['totalElapsedTime']  / $_SESSION['matchCount']);
+         echo "<h4>Average time: " . ( $_SESSION['totalElapsedTime']  / $_SESSION['matchCount']). "</h4>";
          
          $_SESSION['matchCount']++;
     } //elapsedTime
@@ -112,13 +112,15 @@
                 displayCard($user,$card);
             }
             echo "</div>";
-            echo "Dr. ".$playerNames[$user]."";
+            
+            echo "<p id= pName> Dr. ".$playerNames[$user]." </p>";
+        
             echo "<div class='playerScore'>";
-            echo "points this hand ".$totals[$user];
+            echo "points this hand: ".$totals[$user];
 
             
             echo "<br>";
-            echo "total points ".$_SESSION[$playerNames[$user]];
+            echo "total points: ".$_SESSION[$playerNames[$user]];
             echo "<div class='playerHand'>";
 
             echo "</div>";
