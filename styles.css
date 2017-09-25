@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
+@import url('https://fonts.googleapis.com/css?family=Nova+Mono');
+
+
+h2,h3,h4 {
+    text-align:center;
+    font-family: 'Baloo Tammudu', cursive;
+    font-size: 80%;
+}
+
+h1{
+   font-family: 'Baloo Tammudu', cursive;
+   text-align:center;
+}
+
+#pName{
+    
+    font-family: 'Nova Mono', monospace;
+    text-align: center;
+    background-color: rgba(0, 102, 0, 0.3);
+    width: 92px;
+}
+
+
+#winners{
+    color:green;
+    text-align: center;
+    font-family: 'Baloo Tammudu', cursive;
+}
+
+
+.playerName {
+    
+    display:inline-block;
+    margin-left:50px;
+    margin-right:50px;
+    text-align:center;
+
+}
+
+.playerNameText {
+    text-align:center;
+}
+
+
+playerScore{
+    display:inline-block;
+    
+}
+#hScore, #tScore{
+    font-family: 'Nova Mono', monospace;
+}
+
+
+#cardLayout {
+    width:400px;
+    margin:0 auto
+}
